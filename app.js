@@ -17,6 +17,11 @@ request(url, function (err, response, body) {
     if(err){
         console.log('error:', error);
     } else {
+        let conRates = JSON.parse(body);
         console.log(body);
+        console.log("1 USD = " + conRates.rates.EUR + " EUR.");
+        var convertToUSD = 1/conRates.rates.CZK;
+        var convertToFinal = convertToUSD*conRates.rates.GBP;
+        console.log("1 CZK = " +  convertToFinal + " GBP.");
     }
 });
