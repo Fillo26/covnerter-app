@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03511e22-e0c7-44f6-9231-8e9b835b9208" name="Default Changelist" comment="">
+    <list default="true" id="03511e22-e0c7-44f6-9231-8e9b835b9208" name="Default Changelist" comment="Added EJS and CSS files">
+      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -49,9 +54,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v10.16.0-win-x64/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Think\WebstormProjects\converterApp\views" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -102,7 +113,7 @@
       <workItem from="1573319651735" duration="4451000" />
       <workItem from="1573401094757" duration="4945000" />
       <workItem from="1573410565173" duration="3473000" />
-      <workItem from="1573415535361" duration="18123000" />
+      <workItem from="1573415535361" duration="22277000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1573415659287</created>
@@ -125,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573565742669</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added JSON parse and currency conversion test">
+      <created>1573568191066</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573568191066</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +166,8 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Added README and gitignore, removed node_modules" />
     <MESSAGE value="Added API request with main body response." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added API request with main body response." />
+    <MESSAGE value="Added JSON parse and currency conversion test" />
+    <MESSAGE value="Added EJS and CSS files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added EJS and CSS files" />
   </component>
 </project>

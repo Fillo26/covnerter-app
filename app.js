@@ -1,9 +1,12 @@
 var express = require("express");
 var app = express();
 var appID = "26e379c13e6541d7ad63d493fceab562";
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+
 
 app.get('/', function(req, res) {
-    res.send("Hello from app.js!")
+    res.render('index.ejs',{message:'errorMessage'});
 });
 
 app.listen(3000, function() {
@@ -13,7 +16,7 @@ app.listen(3000, function() {
 let url = 'https://openexchangerates.org/api/latest.json?app_id=26e379c13e6541d7ad63d493fceab562';
 var request = require('request');
 
-request(url, function (err, response, body) {
+/*request(url, function (err, response, body) {
     if(err){
         console.log('error:', error);
     } else {
@@ -24,4 +27,4 @@ request(url, function (err, response, body) {
         var convertToFinal = convertToUSD*conRates.rates.GBP;
         console.log("1 CZK = " +  convertToFinal + " GBP.");
     }
-});
+});*/
