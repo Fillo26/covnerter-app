@@ -7,3 +7,9 @@ body {
     width: 600px;
     margin: 0 auto;
 }
+
+.input-text, .block-submit{
+    display: block;
+    margin-top:1em;
+    margin-bottom:1em;
+}

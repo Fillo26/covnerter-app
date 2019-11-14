@@ -3,27 +3,49 @@
 <head>
     <meta charset="utf-8">
     <title>Currency Converter</title>
+    <link rel="stylesheet "type="text/css" href="public/style.css" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>test</h1>
-<div class="container" >
-    <form action="/RatesOpted" method="post">
-        <label>
-            Amount
-        </label>
+<div class="container" style="width: 50%;">
+    <h2>Currency converter</h2>
+    <div class="block-main">
+        <div class="block-left">
+        <span class="input-text">Amount</span>
         <input name="amount" type="number" class="input-amount" placeholder="Amount" required>
-
-        <select name="dropDownFrom" id="">
-            <option name="rate"></option>
+            <span class="input-text">From</span>
+        <select name="rates" id="fromList" class="currencies-dropdown" >
+            <option disabled selected="true">Choose currency</option>
         </select>
-        <select name="dropDownTo" id="">
-            <option name="rate"></option>
+            <span class="input-text">To</span>
+        <select name="rates" id="toList" class="currencies-dropdown" >
+            <option disabled selected="true">Choose destination currency</option>
         </select>
-        <input type="submit" value="Submit">
+        <div class="block-submit"></div>
+            <button>Submit</button>
+        </div>
 
-
-    </form>
+        </div>
+    </div>
 </div>
 </body>
 <footer></footer>
 </html>
+<script>
+   $(document).ready(() => {
+       $.ajax({
+           url: '/currencies'
+       }).then((currencies) => {
+           $.each(currencies, function (key, entry) {
+               $("#fromList").append($('<option />').text(key + " - " + entry));
+               $("#toList").append($('<option />').text(key + " - " + entry));
+           })
+       });
+   });
+</script>
