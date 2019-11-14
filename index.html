@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Currency Converter</title>
-    <link rel="stylesheet "type="text/css" href="public/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="public/style.css" crossorigin="anonymous">
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
@@ -18,7 +19,7 @@
     <div class="block-main">
         <div class="block-left">
         <span class="input-text">Amount</span>
-        <input name="amount" type="number" class="input-amount" placeholder="Amount" required>
+        <input name="amount" type="number" id="amount" class="input-amount" placeholder="Amount" required>
             <span class="input-text">From</span>
         <select name="rates" id="fromList" class="currencies-dropdown" >
             <option disabled selected="true">Choose currency</option>
@@ -28,19 +29,23 @@
             <option disabled selected="true">Choose destination currency</option>
         </select>
         <div class="block-submit"></div>
-            <button>Submit</button>
+            <button onclick="convert()">Submit</button>
+        </div>
+        <div>
+            <span id="res"></span>
         </div>
 
         </div>
-    </div>
 </div>
 </body>
 <footer></footer>
 </html>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
 <script>
    $(document).ready(() => {
        $.ajax({
-           url: '/currencies'
+           url: `/currencies`
        }).then((currencies) => {
            $.each(currencies, function (key, entry) {
                $("#fromList").append($('<option />').text(key + " - " + entry));
@@ -48,4 +53,22 @@
            })
        });
    });
+
+   function convert(){
+       let amount = $("#amount").val();
+       let from = $("#fromList").val().slice(0,3);
+       let to = $("#toList").val().slice(0,3);
+
+       $.ajax({
+           url: `/convert/${amount}-${from}-${to}`,
+           type: 'GET'
+       }).then((data) => {
+           let res = $("#res");
+           console.log(data);
+           if (!data || data === "error"){
+               res.text("Sorry, something went wrong!");
+           }
+           res.text(`${data}`);
+       });
+   }
 </script>
