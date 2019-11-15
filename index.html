@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Currency Converter</title>
     <link rel="stylesheet" type="text/css" href="public/style.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/991211ff3d.js" crossorigin="anonymous"></script>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -12,34 +13,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container" style="width: 50%;">
-    <h2>Currency converter</h2>
-    <div class="block-main">
-        <div class="block-left">
-        <span class="input-text">Amount</span>
-        <input name="amount" type="number" id="amount" class="input-amount" placeholder="Amount" required>
-            <span class="input-text">From</span>
-        <select name="rates" id="fromList" class="currencies-dropdown" >
-            <option disabled selected="true">Choose currency</option>
-        </select>
-            <span class="input-text">To</span>
-        <select name="rates" id="toList" class="currencies-dropdown" >
-            <option disabled selected="true">Choose destination currency</option>
-        </select>
-        <div class="block-submit"></div>
-            <button onclick="convert()">Submit</button>
+<header>
+<div class="post-header">
+    <div class="container">
+        <div class="block-main">
+            <div class="block-left-text">
+                <i class="fas fa-coins"></i><h2>Currency converter</h2>
+                <p>Over 200 currencies</p>
+                <p>Exchange rates updated every hour</p>
+                <p>Single page application</p>
+            </div>
+            <div class="block-right">
+                <div class="block-right-form">
+                    <span class="input-text">Amount</span>
+                    <input name="amount" min="0.01" type="number" id="amount" class="input-amount" placeholder="Amount" required>
+                        <span class="input-text">From</span>
+                    <select name="rates" id="fromList" class="currencies-dropdown" >
+                    <option disabled selected="true">Choose currency</option>
+                    </select>
+                        <span class="input-text">To</span>
+                    <select name="rates" id="toList" class="currencies-dropdown" >
+                        <option disabled selected="true">Choose destination currency</option>
+                    </select>
+                    <div class="block-submit">
+                        <button onclick="convert()">Convert</button>
+                    </div>
+                    <div class="result">
+                        <span id="res" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)">0.00</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <span id="res"></span>
-        </div>
-
-        </div>
+    </div>
 </div>
+</header>
 </body>
 <footer></footer>
 </html>
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
 <script>
@@ -64,11 +78,10 @@
            type: 'GET'
        }).then((data) => {
            let res = $("#res");
-           console.log(data);
            if (!data || data === "error"){
                res.text("Sorry, something went wrong!");
            }
-           res.text(`${data}`);
+           res.text(`${data}`+ " " + to);
        });
    }
 </script>

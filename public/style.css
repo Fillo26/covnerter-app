@@ -1,15 +1,144 @@
 body {
-    width: 800px;
+    width: 100%;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-}
-.container {
-    width: 600px;
-    margin: 0 auto;
+    font-size: 13px;
+
 }
 
-.input-text, .block-submit{
+header{
+    background: url("background_purple3.jpg") 50% 50%;
+    background-size: 110%;
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
+.post-header{
+    width: 100%;
+}
+
+.container {
     display: block;
+    width: 75%;
+    border-radius: 1em;
+    margin-top: 10em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-left-text{
+    width: 50%;
+    float: left;
+}
+
+.block-left-text p{
+    color:#f2f2f2;
+    padding: 0.5em 1.5em;
+    font-size: 1.3em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 0.15em;
+
+}
+
+.block-left-text i{
+    color:#f2f2f2;
+    font-size: 4em;
+    float:left;
+    margin:0.25em 0 0 0.4em;
+    padding-right: 0.5em;
+}
+
+.trapezoid {
+    border-bottom: 100px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 100px;
+}
+
+.block-main{
+    display: inline-block;
+    width: 100%;
+}
+
+.block-main h2{
+    color: #f2f2f2;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    padding-left: 1em;
+    font-size: 2em;
+    margin-bottom: 2em;
+    letter-spacing: 0.2em;
+
+}
+
+.block-right{
+    float: right;
+    width: 30%;
+    padding-right: 10em;
+    margin-top:1em;
+
+}
+
+.input-text{
+    display: block;
+    color:#f2f2f2;
     margin-top:1em;
     margin-bottom:1em;
+}
+
+.input-amount{
+    width: 92%;
+    padding: 1em;
+    border-radius: 2em;
+    border: none;
+}
+
+.currencies-dropdown{
+    width: 100%;
+    border-radius: 2em;
+    height: 3em;
+    padding-left: 0.7em;
+    color:#666666;
+}
+
+.currencies-dropdown option{
+    color:#262626;
+}
+
+.block-submit{
+    width:50%;
+    margin:0;
+    float:left;
+
+}
+
+.block-submit button{
+    width: 100%;
+    background-color:#8632b3;
+    margin-top:3em;
+    border-radius: 2em;
+    border: none;
+    color:#f2f2f2;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.3em;
+    font-size: 1em;
+    padding:0;
+    height:3.5em;
+    cursor:pointer;
+}
+
+.result{
+    float:right;
+    color:#8632b3;
+    z-index: 100;
+    margin-top:2.5em;
+    margin-right: 0.5em;
+    font-size:1.5em;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.2em;
 }

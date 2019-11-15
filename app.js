@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 const bodyParser = require('body-parser');
 var currencies, conRates;
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use('/public', express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -55,5 +55,6 @@ app.get('/convert/:amount-:from-:to', function(req, res){
         let midResult = amount / conRates.rates[from];
         result = midResult * conRates.rates[to];
     }
+    result = result.toFixed(2);
     res.json(result);
 });
