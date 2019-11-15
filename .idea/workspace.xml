@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="03511e22-e0c7-44f6-9231-8e9b835b9208" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +113,7 @@
       <workItem from="1573401094757" duration="4945000" />
       <workItem from="1573410565173" duration="3473000" />
       <workItem from="1573415535361" duration="35850000" />
-      <workItem from="1573727464518" duration="38611000" />
+      <workItem from="1573727464518" duration="41071000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1573415659287</created>
@@ -179,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573808741449</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated design">
+      <created>1573809493546</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573809493546</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +214,7 @@
     <MESSAGE value="Added currency lists, jQuery script &amp; node.js request for receiving currencies data" />
     <MESSAGE value="Added jQuery script for sending data to server &amp; implemented conversion calculating function" />
     <MESSAGE value="Webapp designed, removed /views/index.ejs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Webapp designed, removed /views/index.ejs" />
+    <MESSAGE value="Updated design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated design" />
   </component>
 </project>
